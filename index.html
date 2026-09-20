@@ -1,31 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Find the Odd Color</title>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div class="main-box">
-    <h2>Find the Odd Color Game</h2>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find the Odd Color</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main-box">
+      <h2>Find the Odd Color Game</h2>
 
-    <div class="scores">
-      <p>Score: <span class="score">0</span></p>
-      <p>Highest score: <span class="highe-score">0</span></p>
+      <div class="scores">
+        <p>Score: <span class="score">0</span></p>
+        <p>Record: <span class="highe-score">0</span></p>
+      </div>
+
+      <div class="squares">
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+        <div class="colored-square"></div>
+
+        <div class="losing-screen hidden">
+          <p>You Lose</p>
+          <button>Play Again</button>
+        </div>
+      </div>
     </div>
 
-    <div class="squares">
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-      <div class="colored-square"></div>
-    </div>
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

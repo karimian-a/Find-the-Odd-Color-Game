@@ -14,6 +14,8 @@ const colors = [
 const coloredSquares = document.querySelectorAll(".colored-square");
 const scoreEl = document.querySelector(".score");
 const higheScoreEl = document.querySelector(".highe-score");
+const losingScreen = document.querySelector(".losing-screen");
+const playAgain = document.querySelector(".losing-screen button");
 
 function showRandomColor() {
   const randomColor = Math.floor(Math.random() * colors.length);
@@ -27,7 +29,7 @@ showRandomColor();
 let randomSquare;
 function showDarkerColor() {
   randomSquare = Math.floor(Math.random() * coloredSquares.length);
-  coloredSquares[randomSquare].style.opacity = "0.6";
+  coloredSquares[randomSquare].style.opacity = "0.7";
 }
 showDarkerColor();
 
@@ -46,14 +48,28 @@ function selectTrueSquares() {
         currentScore++;
         scoreEl.textContent = currentScore;
 
-        record++
-        higheScoreEl.textContent = record
-        
+        if (currentScore > record) {
+          record++;
+          higheScoreEl.textContent = record;
+        }
+
         return;
       } else {
-        console.log("false");
+        losingScreen.classList.remove("hidden");
       }
     });
   });
 }
 selectTrueSquares();
+
+playAgain.addEventListener("click", () => {
+  losingScreen.classList.add("hidden");
+
+  showRandomColor();
+
+  coloredSquares[randomSquare].style.opacity = "1";
+  showDarkerColor();
+
+  currentScore = 0;
+  scoreEl.textContent = currentScore;
+});
