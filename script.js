@@ -14,9 +14,16 @@ const colors = [
 const coloredSquares = document.querySelectorAll(".colored-square");
 
 function showRandomColor() {
-  const random = Math.floor(Math.random() * colors.length);
-  coloredSquares.forEach(square => {
-    square.style.backgroundColor = colors[random]
+  const randomColor = Math.floor(Math.random() * colors.length);
+  coloredSquares.forEach((square) => {
+    square.style.backgroundColor = colors[randomColor];
   });
 }
-showRandomColor()
+showRandomColor();
+
+function showlighterColor() {
+  const randomSquare = Math.floor(Math.random() * coloredSquares.length);
+  coloredSquares[randomSquare].style.opacity = '0.6';
+}
+showlighterColor()
+
