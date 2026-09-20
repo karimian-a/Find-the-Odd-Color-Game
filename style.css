@@ -11,7 +11,7 @@ body {
   justify-content: center;
   align-items: center;
   color: #fff;
-  font-family: sans-serif;
+  font-family: "inter", sans-serif;
 }
 
 .main-box {
@@ -22,12 +22,12 @@ body {
   margin: 0 10px;
 }
 
-h2 {
+.title {
   text-align: center;
   font-size: 2.2rem;
 }
 
-h2 span {
+.title--rgb {
   background: linear-gradient(
     90deg,
     #ffbe0b,
@@ -38,16 +38,29 @@ h2 span {
     #16db65
   );
   background-clip: text;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.title--border {
+  font-style: italic;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  color: transparent;
+}
+
+.title--game {
+  font-family: "Orbitron", "inter", sans-serif;
 }
 
 .scores {
   margin: 50px 0 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
   font-size: 1.3rem;
+}
+
+.scores--currentScore {
+  margin-top: 12px;
+  font-size: 1.4rem;
+  font-weight: 600;
 }
 
 .squares {
@@ -103,4 +116,51 @@ h2 span {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+/* ---------- Responsive ---------- */
+/* ---------- From 576px and below ---------- */
+@media (max-width: 576px) {
+  .main-box {
+    padding: 25px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .scores {
+    margin: 40px 0 15px;
+    font-size: 1.1rem;
+  }
+
+  .scores--currentScore {
+    font-size: 1.2rem;
+  }
+
+  .squares {
+    max-width: 350px;
+    height: 350px;
+  }
+}
+
+/* ---------- From 460px and below ---------- */
+@media (max-width: 460px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .scores {
+    margin: 30px 0 10px;
+    font-size: 1rem;
+  }
+
+  .scores--currentScore {
+    font-size: 1.1rem;
+  }
+
+  .squares {
+    width: 290px;
+    height: 290px;
+  }
 }

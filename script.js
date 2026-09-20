@@ -12,8 +12,8 @@ const colors = [
 ];
 
 const coloredSquares = document.querySelectorAll(".colored-square");
-const scoreEl = document.querySelector(".score");
-const highScoreEl = document.querySelector(".highe-score");
+const scoreEl = document.querySelector(".current-score");
+const highScoreEl = document.querySelector(".high-score");
 const losingScreen = document.querySelector(".losing-screen");
 const playAgain = document.querySelector(".losing-screen button");
 
@@ -76,6 +76,7 @@ playAgain.addEventListener("click", () => {
   showRandomColor();
 
   coloredSquares[randomSquare].style.opacity = "1";
+  currentLevel = 0.5;
   showDarkerColor();
 
   currentScore = 0;
