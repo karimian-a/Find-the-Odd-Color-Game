@@ -13,7 +13,7 @@ const colors = [
 
 const coloredSquares = document.querySelectorAll(".colored-square");
 const scoreEl = document.querySelector(".score");
-const higheScoreEl = document.querySelector(".highe-score");
+const highScoreEl = document.querySelector(".highe-score");
 const losingScreen = document.querySelector(".losing-screen");
 const playAgain = document.querySelector(".losing-screen button");
 
@@ -35,7 +35,7 @@ function showDarkerColor() {
 showDarkerColor();
 
 let currentScore = 0;
-let record = 0;
+let highScore = 0;
 
 function selectTrueSquares() {
   coloredSquares.forEach((square, index) => {
@@ -49,9 +49,11 @@ function selectTrueSquares() {
         currentScore++;
         scoreEl.textContent = currentScore;
 
-        if (currentScore > record) {
-          record++;
-          higheScoreEl.textContent = record;
+        if (currentScore > highScore) {
+          highScore++;
+          highScoreEl.textContent = highScore;
+
+          localStorage.setItem("highScore", highScore);
         }
 
         difficultyLevel(currentScore);
@@ -64,6 +66,9 @@ function selectTrueSquares() {
   });
 }
 selectTrueSquares();
+const savedhighScore = localStorage.getItem("highScore");
+highScore = savedhighScore !== null ? Number(savedhighScore) : 0;
+highScoreEl.textContent = highScore;
 
 playAgain.addEventListener("click", () => {
   losingScreen.classList.add("hidden");
