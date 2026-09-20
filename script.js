@@ -15,15 +15,30 @@ const coloredSquares = document.querySelectorAll(".colored-square");
 
 function showRandomColor() {
   const randomColor = Math.floor(Math.random() * colors.length);
+
   coloredSquares.forEach((square) => {
     square.style.backgroundColor = colors[randomColor];
   });
 }
 showRandomColor();
 
+let randomSquare;
 function showDarkerColor() {
-  const randomSquare = Math.floor(Math.random() * coloredSquares.length);
-  coloredSquares[randomSquare].style.opacity = '0.6';
+  randomSquare = Math.floor(Math.random() * coloredSquares.length);
+  coloredSquares[randomSquare].style.opacity = "0.6";
 }
-showDarkerColor()
+showDarkerColor();
 
+function selectTrueSquares() {
+  coloredSquares.forEach((square, index) => {
+    square.addEventListener("click", () => {
+      if (index === randomSquare) {
+        showRandomColor();
+        coloredSquares[randomSquare].style.opacity = "1";
+        showDarkerColor();
+        return;
+      }
+    });
+  });
+}
+selectTrueSquares();

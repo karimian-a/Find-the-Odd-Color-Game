@@ -15,7 +15,6 @@ body{
 }
 
 .main-box{
-  width: 500px;
   background-color: #353535;
   padding: 30px;
   border: 1px solid #aaa;
@@ -37,8 +36,8 @@ h2{
 }
 
 .squares{
-  width: 100%;
-  height: 450px;
+  width: 420px;
+  height: 420px;
   background-color: #252525;
   padding: 5px;
   border: 1px solid #666;
