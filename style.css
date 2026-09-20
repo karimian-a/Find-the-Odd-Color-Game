@@ -10,4 +10,6 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
+  font-family: sans-serif;
 }
