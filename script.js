@@ -12,6 +12,8 @@ const colors = [
 ];
 
 const coloredSquares = document.querySelectorAll(".colored-square");
+const scoreEl = document.querySelector(".score");
+const higheScoreEl = document.querySelector(".highe-score");
 
 function showRandomColor() {
   const randomColor = Math.floor(Math.random() * colors.length);
@@ -29,14 +31,27 @@ function showDarkerColor() {
 }
 showDarkerColor();
 
+let currentScore = 0;
+let record = 0;
+
 function selectTrueSquares() {
   coloredSquares.forEach((square, index) => {
     square.addEventListener("click", () => {
       if (index === randomSquare) {
         showRandomColor();
+
         coloredSquares[randomSquare].style.opacity = "1";
         showDarkerColor();
+
+        currentScore++;
+        scoreEl.textContent = currentScore;
+
+        record++
+        higheScoreEl.textContent = record
+        
         return;
+      } else {
+        console.log("false");
       }
     });
   });
