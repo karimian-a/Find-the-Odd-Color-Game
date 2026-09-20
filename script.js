@@ -1,5 +1,6 @@
 "use strict";
 
+// -----> Color data <---------------
 const colors = [
   "#ffbe0b",
   "#fb5607",
@@ -11,12 +12,14 @@ const colors = [
   "#16db65",
 ];
 
+// -----> Select elements <---------------
 const coloredSquares = document.querySelectorAll(".colored-square");
 const scoreEl = document.querySelector(".current-score");
 const highScoreEl = document.querySelector(".high-score");
 const losingScreen = document.querySelector(".losing-screen");
 const playAgain = document.querySelector(".losing-screen button");
 
+// -----> Randomly change and show color of the squares <---------------
 function showRandomColor() {
   const randomColor = Math.floor(Math.random() * colors.length);
 
@@ -26,6 +29,7 @@ function showRandomColor() {
 }
 showRandomColor();
 
+// -----> Randomly darken square <---------------
 let randomSquare;
 let currentLevel = 0.5;
 function showDarkerColor() {
@@ -34,10 +38,12 @@ function showDarkerColor() {
 }
 showDarkerColor();
 
+// -----> Current score and record <---------------
 let currentScore = 0;
 let highScore = 0;
 
-function selectTrueSquares() {
+// -----> Play round of game <---------------
+function playRound() {
   coloredSquares.forEach((square, index) => {
     square.addEventListener("click", () => {
       if (index === randomSquare) {
@@ -65,11 +71,14 @@ function selectTrueSquares() {
     });
   });
 }
-selectTrueSquares();
+playRound();
+
+// -----> Retriev high score from browser's local storage <---------------
 const savedhighScore = localStorage.getItem("highScore");
 highScore = savedhighScore !== null ? Number(savedhighScore) : 0;
 highScoreEl.textContent = highScore;
 
+// -----> Play again <---------------
 playAgain.addEventListener("click", () => {
   losingScreen.classList.add("hidden");
 
@@ -83,14 +92,7 @@ playAgain.addEventListener("click", () => {
   scoreEl.textContent = currentScore;
 });
 
+// -----> Difficulty Level <---------------
 function difficultyLevel(score) {
-  if (score >= 4) currentLevel = 0.55;
-  if (score >= 9) currentLevel = 0.6;
-  if (score >= 14) currentLevel = 0.65;
-  if (score >= 24) currentLevel = 0.7;
-  if (score >= 29) currentLevel = 0.75;
-  if (score >= 34) currentLevel = 0.8;
-  if (score >= 39) currentLevel = 0.85;
-  if (score >= 44) currentLevel = 0.9;
-  if (score >= 49) currentLevel = 0.95;
+  currentLevel = Math.min(0.95, 0.5 + score * 0.009);
 }

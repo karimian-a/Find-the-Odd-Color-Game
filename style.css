@@ -1,3 +1,4 @@
+/* ---------- Main styles ---------- */
 * {
   padding: 0;
   margin: 0;
@@ -14,6 +15,7 @@ body {
   font-family: "inter", sans-serif;
 }
 
+/* ---------- Main Box styles ---------- */
 .main-box {
   background-color: #1a1b3f;
   padding: 30px;
@@ -22,6 +24,7 @@ body {
   margin: 0 10px;
 }
 
+/* ---------- Title styles ---------- */
 .title {
   text-align: center;
   font-size: 2.2rem;
@@ -52,6 +55,7 @@ body {
   font-family: "Orbitron", "inter", sans-serif;
 }
 
+/* ---------- Scores styles ---------- */
 .scores {
   margin: 50px 0 20px;
   font-size: 1.3rem;
@@ -63,6 +67,7 @@ body {
   font-weight: 600;
 }
 
+/* ---------- Squares styles ---------- */
 .squares {
   width: 430px;
   height: 430px;
@@ -84,6 +89,7 @@ body {
   cursor: pointer;
 }
 
+/* ---------- Losing screen styles ---------- */
 .losing-screen {
   position: absolute;
   inset: 0;
@@ -112,13 +118,14 @@ body {
   cursor: pointer;
 }
 
+/* ---------- Hidden styles ---------- */
 .hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
 }
 
-/* ---------- Responsive ---------- */
+/* ---------- Responsive Design ---------- */
 /* ---------- From 576px and below ---------- */
 @media (max-width: 576px) {
   .main-box {
