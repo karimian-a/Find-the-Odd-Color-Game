@@ -21,9 +21,9 @@ function showRandomColor() {
 }
 showRandomColor();
 
-function showlighterColor() {
+function showDarkerColor() {
   const randomSquare = Math.floor(Math.random() * coloredSquares.length);
   coloredSquares[randomSquare].style.opacity = '0.6';
 }
-showlighterColor()
+showDarkerColor()
 
