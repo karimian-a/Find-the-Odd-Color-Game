@@ -27,9 +27,10 @@ function showRandomColor() {
 showRandomColor();
 
 let randomSquare;
+let currentLevel = 0.5;
 function showDarkerColor() {
   randomSquare = Math.floor(Math.random() * coloredSquares.length);
-  coloredSquares[randomSquare].style.opacity = "0.7";
+  coloredSquares[randomSquare].style.opacity = currentLevel;
 }
 showDarkerColor();
 
@@ -53,6 +54,8 @@ function selectTrueSquares() {
           higheScoreEl.textContent = record;
         }
 
+        difficultyLevel(currentScore);
+
         return;
       } else {
         losingScreen.classList.remove("hidden");
@@ -73,3 +76,15 @@ playAgain.addEventListener("click", () => {
   currentScore = 0;
   scoreEl.textContent = currentScore;
 });
+
+function difficultyLevel(score) {
+  if (score >= 4) currentLevel = 0.55;
+  if (score >= 9) currentLevel = 0.6;
+  if (score >= 14) currentLevel = 0.65;
+  if (score >= 24) currentLevel = 0.7;
+  if (score >= 29) currentLevel = 0.75;
+  if (score >= 34) currentLevel = 0.8;
+  if (score >= 39) currentLevel = 0.85;
+  if (score >= 44) currentLevel = 0.9;
+  if (score >= 49) currentLevel = 0.95;
+}
