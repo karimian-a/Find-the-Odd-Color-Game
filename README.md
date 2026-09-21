@@ -4,7 +4,7 @@ A simple JavaScript game where the player has to find the square with a slightly
 
 ## Live Demo
 
-[Play the game](YOUR_DEMO_LINK_HERE)
+[Play the game](https://karimian-a.github.io/Find-the-Odd-Color-Game/)
 
 ## Features
 
